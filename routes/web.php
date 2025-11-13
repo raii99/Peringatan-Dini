@@ -17,9 +17,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Protected Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
-    Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
-    
+
+    Route::resource('/mahasiswa', MahasiswaController::class);
+
     // Other routes...
     Route::get('/transkrip', [DashboardController::class, 'transkrip'])->name('transkrip');
     Route::get('/krs', [DashboardController::class, 'krs'])->name('krs');
