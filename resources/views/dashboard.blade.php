@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +15,12 @@
             --warning: #f39c12;
             --danger: #e74c3c;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
         }
-        
+
         .sidebar {
             background: linear-gradient(135deg, var(--primary), #2980b9);
             color: white;
@@ -27,12 +28,12 @@
             position: fixed;
             width: 250px;
         }
-        
+
         .sidebar-header {
             padding: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .nav-link {
             color: white;
             padding: 12px 20px;
@@ -40,33 +41,43 @@
             margin: 5px 10px;
             transition: all 0.3s ease;
         }
-        
-        .nav-link:hover, .nav-link.active {
-            background: rgba(255,255,255,0.2);
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .stat-card {
             border-radius: 15px;
             border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
         }
-        
-        .stat-card.success { border-left: 4px solid var(--success); }
-        .stat-card.warning { border-left: 4px solid var(--warning); }
-        .stat-card.danger { border-left: 4px solid var(--danger); }
+
+        .stat-card.success {
+            border-left: 4px solid var(--success);
+        }
+
+        .stat-card.warning {
+            border-left: 4px solid var(--warning);
+        }
+
+        .stat-card.danger {
+            border-left: 4px solid var(--danger);
+        }
     </style>
 </head>
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -77,7 +88,7 @@
             <a href="{{ route('dashboard') }}" class="nav-link active">
                 <i class="fas fa-tachometer-alt me-2"></i> Dashboard
             </a>
-            <a href="{{ route('mahasiswa') }}" class="nav-link">
+            <a href="{{ route('mahasiswa.index') }}" class="nav-link">
                 <i class="fas fa-user-graduate me-2"></i> Data Mahasiswa
             </a>
             <a href="#" class="nav-link">
@@ -119,7 +130,8 @@
                     </span>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
                         {{ strtoupper(substr(Auth::user()->name, 0, 2)) }}
                     </div>
                     <div>
@@ -136,7 +148,8 @@
                 <div class="card stat-card success h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
                                 <i class="fas fa-user-check fs-4"></i>
                             </div>
                             <span class="badge bg-success bg-opacity-25 text-success">
@@ -152,12 +165,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card stat-card warning h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
                                 <i class="fas fa-exclamation-triangle fs-4"></i>
                             </div>
                             <span class="badge bg-warning bg-opacity-25 text-warning">
@@ -173,12 +187,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card stat-card danger h-100">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
                                 <i class="fas fa-skull-crossbones fs-4"></i>
                             </div>
                             <span class="badge bg-danger bg-opacity-25 text-danger">
@@ -285,4 +300,5 @@
         });
     </script>
 </body>
+
 </html>
